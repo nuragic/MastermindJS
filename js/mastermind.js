@@ -90,17 +90,19 @@ var Mastermind = {};
         //attempts.push({combination: combination, result: result});
         currentLevel.attempts-=1;
         
+        console.log('Your combination: '+str);
+        console.log('Hints: ', result);
+          
         if(result.black === 4) {
+          console.log('SECRET: ', _secret);
           alert('You win!');
           return true;
-        } else {
-          console.log('Combination: '+str);
-          console.log('Result: ', result);
         }
       } else {
         return;
       }
     }
+    
     console.log('SECRET: ', _secret);
     alert('You lose!');
     
