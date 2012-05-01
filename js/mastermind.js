@@ -50,7 +50,7 @@ var Mastermind = window.Mastermind = {};
   
   this.generateSecret = function() {
     var i,
-        cc =  this.colors.length -1,
+        cc =  this.colors.length,
         secret = [];
 
     for (i = 0; i < 4; i++) {
