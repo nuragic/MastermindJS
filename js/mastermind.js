@@ -9,31 +9,31 @@ var Mastermind = {};
 
 (function () {
 
-  const VERSION = '0.0.1';
+  const VERSION = '0.0.4';
 
-  var _secret = [];
+  var _secret = [],
   
-  var colors = ['yellow', 'orange', 'red',  'green', 'blue', 'purple', 'pink', 'brown', 'black', 'white'];
+      colors = ['yellow', 'orange', 'red',  'green', 'blue', 'purple', 'pink', 'brown', 'black', 'white'],
+      //TODO
+      levels = [
+        { name: 'normal', time: 0,   attempts: 10, colors: 6  },
+        { name: 'medium', time: 600, attempts: 8,  colors: 8  },
+        { name: 'hard',   time: 300, attempts: 6,  colors: 10 },
+      ],
 
-  var levels = [
-    { name: 'normal', time: 0,   attempts: 10, colors: 6  },
-    { name: 'medium', time: 600, attempts: 8,  colors: 8  },
-    { name: 'hard',   time: 300, attempts: 6,  colors: 10 },
-  ];
+      level = 0,
 
-  var level = 0;
-  
-  var getSecret = function (colors) {
-    var i,
-        cc =  colors.length -1,
-        secret = [];
+      getSecret = function (colors) {
+        var i,
+            cc =  colors.length -1,
+            secret = [];
 
-    for (i = 0; i < 4; i++) {
-      secret[i] = colors[ Math.floor(Math.random() * cc) ];
-    }
+        for (i = 0; i < 4; i++) {
+          secret[i] = colors[ Math.floor(Math.random() * cc) ];
+        }
 
-    return secret;
-  };
+        return secret;
+      };
   
   
   this.setLevel = function (l) {
@@ -47,7 +47,6 @@ var Mastermind = {};
   this.colors = colors.slice(0, this.getLevel().colors -1),
   
   this.hints = function(combination) {
-  
     var hints = {black: 0, white: 0},
         SecretCache = _secret.slice(),
         UserCache   = combination.slice(),
@@ -78,9 +77,10 @@ var Mastermind = {};
   this.play = function () {
     _secret = getSecret(this.colors);
     
-    var attempts = [];
-    var combination, str;
-    var currentLevel = this.getLevel();
+    var attempts = [],
+        combination,
+        str,
+        currentLevel = this.getLevel();
 	
     while(currentLevel.attempts) {
       str = prompt('Give me the secret key!');
