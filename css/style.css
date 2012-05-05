@@ -7,9 +7,8 @@
   padding: 5px;
   background: #dedeff;
   border: 1px solid #666;
-  border-radius:10px;
-  -moz-border-radius:10px;
-  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px #666666, 3px 3px #555555, 4px 4px #444444, 5px 5px 15px #333333
 }
 .row {
   float: left;
@@ -33,10 +32,8 @@
     width: 12px;
     height: 12px;
     margin: 4px;
-    border-radius:7px;
-    -moz-border-radius:7px;
-    -webkit-border-radius: 7px;
     border: 1px solid #333333;
+    border-radius:7px;
     /*box-shadow: 2px 2px 0 #666666 inset;*/
   }
     .hints .circle:nth-child(3) {
@@ -51,14 +48,17 @@
     width: 30px;
     height: 30px;
     border-radius:15px;
-    -moz-border-radius:15px;
-    -webkit-border-radius: 15px;
-    background: #fff;
+    background-color: #ccc;
     margin: 5px;
-    cursor: pointer;
+  }
+  
+  .combination.active .circle {
+   background-color: #fff;
+   cursor: pointer;
   }
   
 #check {
-float:left;
-margin: 5px 0;
+  float:left;
+  margin: 10px 0;
+  width: 100%;
 }
