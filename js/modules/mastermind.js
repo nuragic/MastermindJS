@@ -15,7 +15,7 @@ define(["jquery"], function($) {
 
     //"use strict";
 
-    var VERSION = '0.2.1',
+    var VERSION = '0.3.0',
 
         initialized = false,
 
