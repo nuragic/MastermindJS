@@ -1,7 +1,7 @@
 Mastermind JS
 =============
 
-The classic Mastermind game written in JavaScript (also uses jQuery, HTML5 & CSS3).
+The classic Mastermind game written in JavaScript (also uses jQuery, HTML5, CSS3).
 
 
 Installation & usage
