@@ -1,0 +1,64 @@
+.wrapper {
+  float:left;
+}
+
+#board {
+  float: left;
+  padding: 5px;
+  background: #dedeff;
+  border: 1px solid #666;
+  border-radius: 10px;
+  box-shadow: 2px 2px #666666, 3px 3px #555555, 4px 4px #444444, 5px 5px 15px #333333
+}
+.row {
+  float: left;
+  clear: both;
+  border-bottom: 1px solid #666;
+}
+  .row:last-child {
+    border: 0 none;
+   }
+  
+.hints, .combination {
+  display: inline;
+  float:left;
+}
+
+.hints {
+  margin: 5px;
+}
+  .hints .circle {
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin: 4px;
+    border: 1px solid #333333;
+    border-radius:7px;
+    /*box-shadow: 2px 2px 0 #666666 inset;*/
+  }
+    .hints .circle:nth-child(3) {
+      clear: left;
+    }
+
+.combination {
+  margin: 5px auto;
+}
+  .combination .circle {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius:15px;
+    background-color: #ccc;
+    margin: 5px;
+  }
+  
+  .combination.active .circle {
+   background-color: #fff;
+   cursor: pointer;
+  }
+  
+#check {
+  float:left;
+  margin: 10px 0;
+  width: 100%;
+}
