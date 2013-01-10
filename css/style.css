@@ -1,24 +1,34 @@
 .wrapper {
-  float:left;
+  display: table;
+  margin: 0 auto;
 }
 
 #board {
   float: left;
-  padding: 5px;
-  background: #dedeff;
+  padding: 3px 5px;
+  background: #999;
   border: 1px solid #666;
   border-radius: 10px;
-  box-shadow: 2px 2px #666666, 3px 3px #555555, 4px 4px #444444, 5px 5px 15px #333333
+  box-shadow: 0 0 25px 0 #A6A600;
 }
+
 .row {
-  float: left;
+  background: #556677;
   clear: both;
-  border-bottom: 1px solid #666;
+  float: left;
+  margin: 1px 0 0;
+  width: 190px;
+  /* background-image: -moz-radial-gradient(40% -215%, circle farthest-corner, rgba(0, 0, 0, 0.15) 20%, #000000 200%) */
 }
+  .row:first-child {
+    border: 0 none;
+    border-radius: 8px 8px 0 0;
+  }
   .row:last-child {
     border: 0 none;
-   }
-  
+    border-radius: 0 0 8px 8px;
+  }
+
 .hints, .combination {
   display: inline;
   float:left;
@@ -27,38 +37,97 @@
 .hints {
   margin: 5px;
 }
-  .hints .circle {
+  .hints .hole {
     float: left;
-    width: 12px;
-    height: 12px;
-    margin: 4px;
-    border: 1px solid #333333;
-    border-radius:7px;
-    /*box-shadow: 2px 2px 0 #666666 inset;*/
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius:10px;
+
+    box-shadow: 0 0 0 2px #CCCCCC inset, 1px 1px 0 2px #000000 inset, 0 0 0 1px #666666;
+    /*
+    3px 3px 0 0 #333333 inset, 2px 2px 0 2px #666666 inset;
+    3px 3px 0 1px #333333 inset, 1px 1px 0 1px #111111 inset;
+    3px 3px 0 0 #000000 inset, -1px 3px 0 -1px #666666 inset;
+    */
   }
-    .hints .circle:nth-child(3) {
+    .hints .hole:nth-child(3) {
       clear: left;
     }
 
+    .hints .hole.peg {
+      box-shadow: none;
+    }
+    .hints .hole.peg.white{
+      background: #fff;
+      box-shadow: 0 0 2px 0 #000000;
+      /* 0 0 2px 0 #000000 inset */
+      /*-1px -1px 2px 0 #000000 inset*/
+    }
+    .hints .hole.peg.black{
+      background: #000;
+      box-shadow: 0 0 0 1px #000000, 0 0 3px -2px #FFFFFF inset;
+      /*0 0 0 1px #000000, 0 0 2px #FFFFFF inset*/
+    }
+
 .combination {
-  margin: 5px auto;
+  margin: 7px auto;
 }
-  .combination .circle {
+  .combination .hole {
+    background-color: #CCCCCC;
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #CCCCCC inset, 1px 2px 2px 2px #000000 inset, 0 0 0 1px #666666;
     float: left;
-    width: 30px;
-    height: 30px;
-    border-radius:15px;
-    background-color: #ccc;
-    margin: 5px;
+    height: 15px;
+    margin: 10px;
+    width: 15px;
   }
-  
-  .combination.active .circle {
+
+  .combination.active .hole {
    background-color: #fff;
    cursor: pointer;
   }
-  
+
+    .combination .hole.peg {
+      box-shadow: 1px 1px 1px 0px rgb(51, 51, 51), 0px 0px 3px -1px #000 inset;
+    }
+    .combination .hole.peg.yellow {
+      background: yellow;
+    }
+    .combination .hole.peg.orange {
+       background: orange;
+    }
+    .combination .hole.peg.red {
+      background: red;
+    }
+    .combination .hole.peg.green {
+       background: green;
+    }
+    .combination .hole.peg.blue {
+      background: blue;
+    }
+    .combination .hole.peg.purple {
+       background: purple;
+    }
+    .combination .hole.peg.pink {
+      background: pink;
+    }
+    .combination .hole.peg.brown {
+       background: brown;
+    }
+    .combination .hole.peg.white {
+      background: #fff;
+    }
+    .combination .hole.peg.black {
+       background: #000;
+    }
+
+
 #check {
   float:left;
   margin: 10px 0;
   width: 100%;
 }
+/*
+background: -moz-radial-gradient(at 30% 40% , color, #000000);
+*/
