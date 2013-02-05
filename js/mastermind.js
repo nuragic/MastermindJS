@@ -1,6 +1,6 @@
 /*!
  * Mastermind JS
- *  The classic Mastermind game written in JavaScript (also uses jQuery,HTML5,CSS3).
+ *  The classic Mastermind game written in JavaScript.
  *
  *  Copyleft 2013, Andrea Puddu <andrea@morethanweb.net>
  *  Released under the GNU GPL v3 License.
@@ -8,7 +8,7 @@
  *  About the original Mastermind game: http://en.wikipedia.org/wiki/Mastermind_(board_game)
  */
 
-define(["jquery"], function($) {
+define(["kimbo"], function($) {
 
   var Mastermind = function () {
 
@@ -85,7 +85,8 @@ define(["jquery"], function($) {
       var hints,
           b, w, ww;
 
-      hints = $('.hints:eq('+(currentLevel.attempts - currentAttempt)+') .hole');
+      //hints = $('.hints:eq('+(currentLevel.attempts - currentAttempt)+') .hole');
+      hints = $('.hints').eq(currentLevel.attempts - currentAttempt).find('.hole');
 
       for(b = 0; b < hintsObject.black; b++){
         $(hints[b]).addClass('peg black');
@@ -98,7 +99,8 @@ define(["jquery"], function($) {
 
     ಠ_ಠ.nextAttempt = function() {
       if(currentAttempt <= currentLevel.attempts) {
-        $currentRow = $('.combination:eq('+(currentLevel.attempts - currentAttempt)+')');
+        //$currentRow = $('.combination:eq('+(currentLevel.attempts - currentAttempt)+')');
+        $currentRow = $('.combination').eq(currentLevel.attempts - currentAttempt);
         $currentRow.addClass('active');
         //listen to the current attempt
         $currentRow.on('click', '.hole', {colors: currentLevel.colors}, ಠ_ಠ.switchPegs);
@@ -112,7 +114,7 @@ define(["jquery"], function($) {
     ಠ_ಠ.switchPegs = function (ev) {
         //get the possibility to change peg colors
         var $this = $(this),
-            x = $this.data('x'),
+            x = parseInt($this.data('x'), 10),
             colors = ev.data.colors;
 
         x = (x < colors.length - 1) ? x + 1 : 0;

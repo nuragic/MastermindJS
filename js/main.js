@@ -1,15 +1,12 @@
-requirejs.config({
-  baseUrl: 'js/libs',
+require.config({
   paths: {
-      amd:  '../modules',
-      tmpl: '../../tmpl'
+      tmpl: '../tmpl'
   }
 });
 
-
-requirejs([
-  'jquery',
-  'amd/mastermind',
+require([
+  'kimbo',
+  'mastermind',
   'text!tmpl/_row.html'
   ],
 
