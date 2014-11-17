@@ -343,7 +343,7 @@ function _insertBefore(elem, value, isPrepend) {
   if (isPrepend) {
     elem.insertBefore(value, elem.firstChild);
   } else {
-    elem.insertBefore(value);
+    elem.insertBefore(value, null);
   }
 }
 
