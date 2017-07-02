@@ -1,0 +1,27 @@
+{
+  "name": "mastermind",
+  "version": "2.0.0",
+  "description": "The classic Mastermind game, written in JavaScript (ES6+, React).",
+  "author": "Andrea Puddu <me@nuragic.io>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nuragic/MastermindJS.git"
+  },
+  "main": "index.html",
+  "devDependencies": {
+    "react-scripts": "^1.0.0"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-repeat-component": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "post-push": "now"
+  }
+}

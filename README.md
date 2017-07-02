@@ -1,16 +1,19 @@
-Mastermind JS
-=============
+# MastermindJS
 
-The classic Mastermind game written in JavaScript.
+The classic Mastermind game, written in JavaScript (ES6+, React).
 
+## Play / Hack
 
-Installation & usage
---------------------
+Clone the repo, run `yarn` or `npm install` and then `npm start`.
 
-Download, unzip, and open the index.html file. Enjoy!
+## Contribute
 
+A lot of cool stuff can be added, a better design is so much required actually!
 
-Contributing
-------------
+Please feel free to propose your ideas and send a PR. Thanks!
 
-Want to contribute? Great! Let me know.
+## License
+
+MIT.
+
+See `LICENSE` file for detailed information.

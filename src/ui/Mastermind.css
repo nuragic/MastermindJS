@@ -1,14 +1,18 @@
 body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
   background: #ddd;
 }
 
 .wrapper {
-  display: table;
   margin: 0 auto;
+  min-width: 320px;
+  text-align: center;
 }
 
-#board {
-  float: left;
+.board {
+  display: inline-block;
   padding: 3px 5px;
   background: #999;
   border: 1px solid #666;
@@ -16,13 +20,17 @@ body {
 }
 
 .row {
-  background: #556677;
-  clear: both;
-  float: left;
+  display: flex;
+  position: relative;
+  background: #667788;
   margin: 1px 0 0;
-  width: 190px;
   /* background-image: -moz-radial-gradient(40% -215%, circle farthest-corner, rgba(0, 0, 0, 0.15) 20%, #000000 200%) */
 }
+
+  .row.active {
+    background: #445566;
+  }
+
   .row:first-child {
     border: 0 none;
     border-radius: 8px 8px 0 0;
@@ -85,6 +93,7 @@ body {
     height: 14px;
     padding: 4px;
     margin: 6px;
+    cursor: pointer;
   }
 
   .combination.active .hole {
@@ -126,12 +135,8 @@ body {
        background: #000;
     }
 
-
-#check {
-  float:left;
-  margin: 10px 0;
-  width: 100%;
-}
-/*
-background: -moz-radial-gradient(at 30% 40% , color, #000000);
-*/
+  .confirm {
+    position: absolute;
+    right: -75px;
+    top: 15px;
+  }
